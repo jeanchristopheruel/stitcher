@@ -7,7 +7,7 @@ High performance stitching library for custom 360 cameras
 - [x] Extrinsic Calibration App
 - [x] Image stitching (As batch of images)
 - [ ] Python Binding
-- [ ] Unit tests
+- [x] Unit tests
 
 ## Index
 - [LiveSticher: Stitching Library](#livesticher-stitching-library)
