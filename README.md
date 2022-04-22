@@ -100,52 +100,57 @@ cmake -DPACKAGE_TESTS=ON ..
 ctest
 ```
 
-## Files Structure Support
+## Json Structure
+### Intrinsic json Structure
 ``` 
- *      intrinsic_json Structure:
- *      {
- *          "cameras": {
- *              cam1: {
- *                  "intrinsic": <list of float, len<9>>,
- *                  "dist_coeffs": <list of load, len<5>>,
- *                  "dims": [<width>, <height>]
- *              },
- *              ...
- *           }
- *      }
- *
- *      extrinsic_json Structure:
- *      {
- *          "cameras": {
- *              "cam1": {
- *                  "intrinsic": <list of float, len<9>>,
- *                  "dist_coeffs": <list of load, len<5>>,
- *                  "dims": [<width>, <height>],
- *                  "extrinsic": <list, len<9>>
- *              },
- *              ...
- *          }
- *      }
- *
- *      rotation_json Structure:
- *      {
- *          "cameras": {
- *              "cam1": {
- *                  "intrinsic": <list of float, len<9>>,
- *                  "dist_coeffs": <list of load, len<5>>,
- *                  "dims": [<width>, <height>],
- *                  "extrinsic": <list, len<9>>
- *                  "focal": <double>,
- *              },
- *              ...
- *          }
- *      }
- * @param dataset_json
- *      dataset Structure:
- *      {
- *          "cam1": <list of img paths, len<X>>,
- *          "cam2": <list of img paths, len<X>>,
- *          ...
- *      }
- */
+ {
+     "cameras": {
+         cam1: {
+             "intrinsic": <list of float, len<9>>,
+             "dist_coeffs": <list of load, len<5>>,
+             "dims": [<width>, <height>]
+         },
+         ...
+      }
+ }
+ ``` 
+ 
+ ### Extrinsic json Structure
+ ``` 
+ {
+     "cameras": {
+         "cam1": {
+             "intrinsic": <list of float, len<9>>,
+             "dist_coeffs": <list of load, len<5>>,
+             "dims": [<width>, <height>],
+             "extrinsic": <list, len<9>>
+         },
+         ...
+     }
+ }
+ ``` 
+ 
+### Rotation json Structure
+``` 
+ {
+     "cameras": {
+         "cam1": {
+             "intrinsic": <list of float, len<9>>,
+             "dist_coeffs": <list of load, len<5>>,
+             "dims": [<width>, <height>],
+             "extrinsic": <list, len<9>>
+             "focal": <double>,
+         },
+         ...
+     }
+ }
+``` 
+
+### Dataset json Structure
+```
+ {
+     "cam1": <list of img paths, len<X>>,
+     "cam2": <list of img paths, len<X>>,
+     ...
+ }
 ```
