@@ -1,0 +1,67 @@
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y build-essential \
+gcc \
+g++ \
+gdb \
+clang \
+rsync \
+tar \
+&& apt-get clean
+
+COPY docker/dependencies/install_cmake.sh /home
+RUN sh /home/install_cmake.sh
+COPY docker/dependencies/install_boost.sh /home
+RUN sh /home/install_boost.sh
+
+WORKDIR /
+RUN mkdir licenses
+COPY docker/dependencies/install_opencv.sh /home
+RUN sh /home/install_opencv.sh
+
+WORKDIR /home
+RUN export PATH="/prefix/bin/:$PATH"
+
+
+# -------------------------------------------------------------------------------------
+#   Install LiveStitcher
+# -------------------------------------------------------------------------------------
+
+WORKDIR /home/livestitcher
+RUN apt-get install -y python3-pip
+RUN python3 -m pip install --upgrade pip
+# Allow cmake to find opencv and the other dependent packages
+COPY . /home/livestitcher
+ENV CMAKE_PREFIX_PATH=/prefix/
+RUN pip3 install -v --prefix=/prefix .
+
+# -------------------------------------------------------------------------------------
+#   Multistage build
+# -------------------------------------------------------------------------------------
+# For lowering the image size and ensuring removing source code
+#
+
+FROM ubuntu:18.04
+COPY --from=0 /prefix/ /prefix
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libcrypto* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libstdc++* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libm* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libssl* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libjpeg* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libpng16* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libtiff* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libIlmImf* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libtbb* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libz* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libmyelin* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/liblzma* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libjbig* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libHalf* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libIex* /usr/lib/aarch64-linux-gnu/
+COPY --from=0 /usr/lib/aarch64-linux-gnu/libIlmThread* /usr/lib/aarch64-linux-gnu/
+
+ENV LD_LIBRARY_PATH=/prefix/lib/python3.6/site-packages/:${LD_LIBRARY_PATH}
+ENV PYTHONPATH=/prefix/lib/python3.6/:/prefix/lib/python3.6/site-packages/:${PYTHONPATH}
+RUN python3 -c "import livestitcher; print(f'livestitcher version: {livestitcher.__version__}')"

@@ -1,0 +1,22 @@
+{
+  "cam1": [
+    "pano/camera_1.png",
+    "pano/camera_1.png"
+  ],
+  "cam2": [
+    "pano/camera_2.png",
+    "pano/camera_2.png"
+  ],
+  "cam3": [
+    "pano/camera_3.png",
+    "pano/camera_3.png"
+  ],
+  "cam4": [
+    "pano/camera_4.png",
+    "pano/camera_4.png"
+  ],
+  "cam5": [
+    "pano/camera_5.png",
+    "pano/camera_5.png"
+  ]
+}

@@ -1,0 +1,40 @@
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y build-essential \
+gcc \
+g++ \
+gdb \
+clang \
+rsync \
+tar \
+&& apt-get clean
+
+COPY docker/dependencies/install_cmake.sh /home
+RUN sh /home/install_cmake.sh
+COPY docker/dependencies/install_boost.sh /home
+RUN sh /home/install_boost.sh
+
+WORKDIR /
+RUN mkdir licenses
+COPY docker/dependencies/install_opencv.sh /home
+RUN sh /home/install_opencv.sh
+
+WORKDIR /home
+RUN export PATH="/prefix/bin/:$PATH"
+
+# For using as a remote build agent with Clion: https://blog.jetbrains.com/clion/2020/01/using-docker-with-clion/
+RUN apt-get update && apt-get install -y openssh-server && apt-get clean
+
+RUN mkdir /var/run/sshd
+RUN echo 'root:password' | chpasswd
+RUN sed -i 's/#*PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd
+
+ENV NOTVISIBLE="in users profile"
+RUN echo "export VISIBLE=now" >> /etc/profile
+
+CMD ["/usr/sbin/sshd", "-D"]

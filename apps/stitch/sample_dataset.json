@@ -1,0 +1,27 @@
+{
+  "cam1": [
+    "pano_splitted/sk2_frame_00000_panoramic_camera_1.png",
+    "pano_splitted/sk2_frame_02720_panoramic_camera_1.png",
+    "pano_splitted/sk2_frame_05690_panoramic_camera_1.png"
+  ],
+  "cam2": [
+    "pano_splitted/sk2_frame_00000_panoramic_camera_2.png",
+    "pano_splitted/sk2_frame_02720_panoramic_camera_2.png",
+    "pano_splitted/sk2_frame_05690_panoramic_camera_2.png"
+  ],
+  "cam3": [
+    "pano_splitted/sk2_frame_00000_panoramic_camera_3.png",
+    "pano_splitted/sk2_frame_02720_panoramic_camera_3.png",
+    "pano_splitted/sk2_frame_05690_panoramic_camera_3.png"
+  ],
+  "cam4": [
+    "pano_splitted/sk2_frame_00000_panoramic_camera_4.png",
+    "pano_splitted/sk2_frame_02720_panoramic_camera_4.png",
+    "pano_splitted/sk2_frame_05690_panoramic_camera_4.png"
+  ],
+  "cam5": [
+    "pano_splitted/sk2_frame_00000_panoramic_camera_5.png",
+    "pano_splitted/sk2_frame_02720_panoramic_camera_5.png",
+    "pano_splitted/sk2_frame_05690_panoramic_camera_5.png"
+  ]
+}

@@ -1,0 +1,13 @@
+//
+// Created by jcruel on 2021-01-31.
+//
+
+#ifndef LIVESTITCHER_PATH_H
+#define LIVESTITCHER_PATH_H
+
+std::string getAssetsDirPath()
+{
+    return "@ASSETSDIRPATH@";
+}
+
+#endif //LIVESTITCHER_PATH_H

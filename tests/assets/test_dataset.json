@@ -1,0 +1,42 @@
+{
+  "cam1": [
+    "calib/frame_00000_camera_1.jpg",
+    "calib/frame_00022_camera_1.jpg",
+    "calib/frame_00037_camera_1.jpg",
+    "calib/frame_00053_camera_1.jpg",
+    "calib/frame_00066_camera_1.jpg",
+    "calib/frame_00070_camera_1.jpg"
+  ],
+  "cam2": [
+    "calib/frame_00000_camera_2.jpg",
+    "calib/frame_00022_camera_2.jpg",
+    "calib/frame_00037_camera_2.jpg",
+    "calib/frame_00053_camera_2.jpg",
+    "calib/frame_00066_camera_2.jpg",
+    "calib/frame_00070_camera_2.jpg"
+  ],
+  "cam3": [
+    "calib/frame_00000_camera_3.jpg",
+    "calib/frame_00022_camera_3.jpg",
+    "calib/frame_00037_camera_3.jpg",
+    "calib/frame_00053_camera_3.jpg",
+    "calib/frame_00066_camera_3.jpg",
+    "calib/frame_00070_camera_3.jpg"
+  ],
+  "cam4": [
+    "calib/frame_00000_camera_4.jpg",
+    "calib/frame_00022_camera_4.jpg",
+    "calib/frame_00037_camera_4.jpg",
+    "calib/frame_00053_camera_4.jpg",
+    "calib/frame_00066_camera_4.jpg",
+    "calib/frame_00070_camera_4.jpg"
+  ],
+  "cam5": [
+    "calib/frame_00000_camera_5.jpg",
+    "calib/frame_00022_camera_5.jpg",
+    "calib/frame_00037_camera_5.jpg",
+    "calib/frame_00053_camera_5.jpg",
+    "calib/frame_00066_camera_5.jpg",
+    "calib/frame_00070_camera_5.jpg"
+  ]
+}
