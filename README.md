@@ -86,7 +86,7 @@ FLAGS
                               Must be withing this interval: ]0, 1]. 
 ```
 
-## How to use
+## How to build dev environnement
 ### 1) Clone Repo and Submodules
 ```
 git clone https://github.com/ruelj2/stitcher
@@ -99,41 +99,7 @@ docker build -f docker/Dockerfile.dev-amd64 -t stitcher-dev .
 docker run -d --cap-add sys_ptrace -p2222:22 --name stitcher-dev stitcher-dev
 ```
 
-### 3) Configure IDE to use remote environment container
-#### For CLion
-From the docker provided container images:
-* user: `root`
-* password: `password`
-* address: `localhost`
-* port: `2222`
-
-**Note for CLION:**  
-See https://www.jetbrains.com/help/clion/remote-projects-support.html
-The .git directory is used in CMAKE to download the submodules automatically. But by default, CLION doesn't
-include .git directory in remote interpreter (Probably to speed up the files transfer). To change it:
-Preferences -> Build, Execution, Deployment -> Deployment -> Options ->
-find “Exclude items by name”` and remove `.git` from the list.
-Finally, reload all remote environment.
-
-Workaround:
-Manually log in the running docker container to update submodules with `git submodule update --init --recursive`
-
-#### For VSCODE
-Develop inside the created container "remote-cpp-env".
-1. In host's VSCode, install extension [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
-2. In host's VSCode, attach to the "remote-cpp-env" container and open directory `/home/tracktorpy`. If the volume binding is ok, the container should now share the tracktorpy directory with the host.
-3. Inside the container's VSCode, install C++, Cmake and CMake-tools extensions.
-
-You can use this setting for your vscode in `.vscode/settings.json` in order to enable the build of the c++ tests. For more info, visit [CMake-tools](https://vector-of-bool.github.io/docs/vscode-cmake-tools/settings.html).
-```
-{
-    "cmake.configureArgs": [
-        "-DPACKAGE_TESTS=ON"
-    ]
-}
-```
-
-## Launch unit tests
+##Launch unit tests
 ### C++ tests
 No tests available yet.
 ```
