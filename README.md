@@ -86,13 +86,7 @@ FLAGS
                               Must be withing this interval: ]0, 1]. 
 ```
 
-## Dependencies
-* OPENCV >= 4.3
-* BOOST >= 1.68
-
-Minimal dependencies can be installed using shell scripts in `docker/dependencies`.
-
-## Develop Environment
+## How to use
 ### 1) Clone Repo and Submodules
 ```
 git clone https://github.com/ruelj2/livestitcher
