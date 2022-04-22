@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.13)
 #-------------------------------------------------------------------------------
 # Project Definitions
 #-------------------------------------------------------------------------------
-project(livestitcher
-        VERSION "0.0.1"
-        DESCRIPTION "Deployable detection & tracking service"
+project(Stitcher
+        VERSION "0.1.0"
+        DESCRIPTION "High performance stitching library for mutlisensor cameras based on OpenCV primitives"
         LANGUAGES CXX C)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
