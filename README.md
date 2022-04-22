@@ -94,7 +94,6 @@ docker run -d --cap-add sys_ptrace -p2222:22 --name stitcher-dev stitcher-dev
 
 ## Launch unit tests
 ### C++ tests
-No tests available yet.
 ```
 mkdir build && cd build
 cmake -DPACKAGE_TESTS=ON ..
