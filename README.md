@@ -1,4 +1,4 @@
-# LiveSticher: Stitching Library
+# Sticher: Stitching Library
 High performance stitching library for 360 cameras based on OpenCV primitives
 
 ![alt tag](assets/stitching_example.png)
@@ -10,7 +10,7 @@ High performance stitching library for 360 cameras based on OpenCV primitives
 - [x] Unit tests
 
 ## Index
-- [LiveSticher: Stitching Library](#livesticher-stitching-library)
+- [Sticher: Stitching Library](#sticher-stitching-library)
     - [Index](#index)
     - [General Usage](#general-usage)
     - [Develop Environment](#develop-environment)
@@ -89,14 +89,14 @@ FLAGS
 ## How to use
 ### 1) Clone Repo and Submodules
 ```
-git clone https://github.com/ruelj2/livestitcher
-cd livestitcher
+git clone https://github.com/ruelj2/stitcher
+cd stitcher
 git submodule update --init --recursive
 ```
-### 2) Deploy Docker development environment 
+### 2) Build & Run Docker development container 
 ```
-docker build -f docker/Dockerfile.dev-amd64 -t livestitcher-dev .
-docker run -d --cap-add sys_ptrace -p2222:22 --name livestitcher-dev livestitcher-dev
+docker build -f docker/Dockerfile.dev-amd64 -t stitcher-dev .
+docker run -d --cap-add sys_ptrace -p2222:22 --name stitcher-dev stitcher-dev
 ```
 
 ### 3) Configure IDE to use remote environment container
@@ -144,7 +144,6 @@ ctest
 
 ## Files Structure Support
 ``` 
-* LAZ-Standardised files format:
  *      intrinsic_json Structure:
  *      {
  *          "cameras": {
