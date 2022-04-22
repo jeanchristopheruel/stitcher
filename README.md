@@ -92,7 +92,7 @@ docker build -f docker/Dockerfile.dev-amd64 -t stitcher-dev .
 docker run -d --cap-add sys_ptrace -p2222:22 --name stitcher-dev stitcher-dev
 ```
 
-##Launch unit tests
+## Launch unit tests
 ### C++ tests
 No tests available yet.
 ```
