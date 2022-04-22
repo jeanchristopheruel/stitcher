@@ -17,7 +17,7 @@ High performance stitching library for 360 cameras based on OpenCV primitives
     - [Launch unit tests](#launch-unit-tests)
 
 ## General Usage
-### Extrinsic Calibration
+### Extrinsic Calibration App
 ```
 [Extrinsic Calibration for Cylindrical Stitching] 
 This tool evaluate the homography transformation matrix R for each provided images using 
@@ -50,7 +50,7 @@ FLAGS
                               Options: 'no', 'ray', 'reproj' 
 ```
 
-### Image stitching (As batch of images)
+### Image stitching App
 ```
 [Custom Stitching] 
 This tool performs the stitching of multiple camera stream for a given projection model. 
