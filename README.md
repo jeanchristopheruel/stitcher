@@ -7,7 +7,7 @@ High performance stitching library for mutlisensor cameras based on OpenCV primi
 - [x] Extrinsic Calibration App
 - [x] Image stitching (As batch of images)
 - [ ] Python Binding
-- [x] Unit tests
+- [ ] Lot more Unit tests
 
 ## General Usage
 ### Extrinsic Calibration App
