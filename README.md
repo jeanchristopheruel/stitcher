@@ -1,5 +1,5 @@
 # LiveSticher: Stitching Library
-High performance stitching library for custom 360 cameras
+High performance stitching library based on OpenCv primitives
 
 ![alt tag](assets/stitching_example.png)
 
