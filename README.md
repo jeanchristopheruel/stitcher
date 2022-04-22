@@ -1,5 +1,5 @@
 # LiveSticher: Stitching Library
-High performance stitching library based on OpenCv primitives
+High performance stitching library based on OpenCV primitives
 
 ![alt tag](assets/stitching_example.png)
 
