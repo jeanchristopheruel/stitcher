@@ -9,13 +9,6 @@ High performance stitching library for 360 cameras based on OpenCV primitives
 - [ ] Python Binding
 - [x] Unit tests
 
-## Index
-- [Sticher: Stitching Library](#sticher-stitching-library)
-    - [Index](#index)
-    - [General Usage](#general-usage)
-    - [Develop Environment](#develop-environment)
-    - [Launch unit tests](#launch-unit-tests)
-
 ## General Usage
 ### Extrinsic Calibration App
 ```
