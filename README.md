@@ -1,5 +1,5 @@
 # Sticher: Stitching Library
-High performance stitching library for mutlisensor cameras based on OpenCV primitives
+Stitching library for mutlisensor cameras based on OpenCV primitives
 
 ![alt tag](assets/stitching_example.png)
 
